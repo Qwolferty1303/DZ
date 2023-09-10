@@ -1,4 +1,4 @@
-// Ваш код для обработки нажатия на кнопку "loginButton"
+// Проверка нажатия на кнопку "loginButton"
 document.getElementById("loginButton").addEventListener("click", function() {
     let firstName = document.querySelector(".Name").value.trim();
     let lastName = document.querySelector(".surname").value.trim();
@@ -8,12 +8,10 @@ document.getElementById("loginButton").addEventListener("click", function() {
     if (firstName === "" || lastName === "" || email === "" || password === "") {
         alert("Пожалуйста, заполните все поля.");
     } else {
-        // Устанавливаем значение переменной getName равным значению инпута .Name
-        const getName = document.querySelector(".Name").value.trim();
-        // Здесь можно использовать переменную getName, содержащую значение инпута .Name
-
-        // Экспортируем значение getName
-        export { getName };
+        const name = document.getElementById('getName').value;
+        console.log(name)
+        localStorage.setItem("name", name);
         window.location.href = "index2.html";
     }
 });
+
